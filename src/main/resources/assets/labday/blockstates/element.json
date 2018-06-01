@@ -1,0 +1,13 @@
+{
+    "variants":
+    {
+        "facing=north,processing=false": { "model": "labday:processor" },
+        "facing=east,processing=false": { "model": "labday:processor" },
+        "facing=south,processing=false": { "model": "labday:processor" },
+        "facing=west,processing=false": { "model": "labday:processor" },
+        "facing=north,processing=true": { "model": "labday:processor_active" },
+        "facing=east,processing=true": { "model": "labday:processor_active" },
+        "facing=south,processing=true": { "model": "labday:processor_active" },
+        "facing=west,processing=true": { "model": "labday:processor_active" }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures":
+    {
+        "particle": "labday:blocks/processor/processor_front",
+        "up": "labday:blocks/processor/processor_top_active",
+        "down": "labday:blocks/processor/processor_bottom",
+        "north": "labday:blocks/processor/processor_front_active",
+        "south": "labday:blocks/processor/processor_back_active",
+        "east": "labday:blocks/processor/processor_right_active",
+        "west": "labday:blocks/processor/processor_left_active"
+    }
+}
