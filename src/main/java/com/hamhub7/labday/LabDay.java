@@ -10,6 +10,7 @@ import com.hamhub7.labday.recipes.ModRecipes;
 import com.hamhub7.labday.recipes.ProcessorRecipes;
 import com.hamhub7.labday.tabs.CreativeTab;
 import com.hamhub7.labday.tabs.ElementTab;
+import com.hamhub7.labday.util.ElementUtil;
 import com.hamhub7.labday.util.GuiHandler;
 import com.hamhub7.labday.util.SoundsHandler;
 
@@ -56,7 +57,8 @@ public class LabDay
     public void init(FMLInitializationEvent event)
     {
     	ModRecipes.init();
-    	ProcessorRecipes.getInstance().init();
+    	ProcessorRecipes.getInstance().init();;
+    	ElementUtil.getInstance().addTemps();
     	SoundsHandler.registerSounds();
     }
     
