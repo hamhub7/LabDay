@@ -1,0 +1,26 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "labday:blocks/textbook/top",
+        "1": "labday:blocks/textbook/pages",
+        "2": "labday:blocks/textbook/bottom",
+        "3": "labday:blocks/textbook/spine",
+        "4": "labday:blocks/textbook/cover",
+        "5": "labday:blocks/textbook/backcover"
+    },
+    "elements": [
+        {
+            "name": "Notebook",
+            "from": [ 3.0, 0.0, 3.0 ], 
+            "to": [ 9.0, 1.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "east": { "texture": "#1", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "south": { "texture": "#2", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "west": { "texture": "#3", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "up": { "texture": "#4", "uv": [ 0.0, 0.0, 6.0, 8.0 ] },
+                "down": { "texture": "#5", "uv": [ 0.0, 0.0, 6.0, 8.0 ], "rotation": 180 }
+            }
+        }
+    ]
+}

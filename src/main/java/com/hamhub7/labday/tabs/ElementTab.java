@@ -11,7 +11,7 @@ public class ElementTab extends CreativeTabs
 {
 	public ElementTab() 
 	{
-		super(LabDay.modid);
+		super("elements");
 	}
 	
 	@Override

@@ -1,6 +1,8 @@
 package com.hamhub7.labday.tabs;
 
 import com.hamhub7.labday.LabDay;
+import com.hamhub7.labday.block.ModBlocks;
+import com.hamhub7.labday.item.ModItems;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -16,6 +18,6 @@ public class CreativeTab extends CreativeTabs
 	@Override
 	public ItemStack getTabIconItem() 
 	{
-		return new ItemStack(Items.ACACIA_BOAT);
+		return new ItemStack(ModBlocks.notebook);
 	}
 }

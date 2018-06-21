@@ -39,6 +39,9 @@ public class GuiProcessor extends GuiContainer
 		drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 		
 		int l = this.tileentity.getCookProgressScaled(50);
+		int e = this.tileentity.getEnergyScaled(54);
+		
+		this.drawTexturedModalRect(this.guiLeft + 10, this.guiTop + 7 + (54 - e), 240, 7, 8, e);
 		
 		if(this.tileentity.recipeAmount() == 1)
 		{
@@ -58,7 +61,8 @@ public class GuiProcessor extends GuiContainer
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
 	{
 		String name = I18n.format(ModBlocks.processor.getUnlocalizedName() + ".name");
-		fontRenderer.drawString(name, 6, 6, 0x000000);
+		fontRenderer.drawString(name, 24, 6, 0x000000);
 		fontRenderer.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 92, 0x404040);
+		renderHoveredToolTip(mouseX, mouseY);
 	}
 }

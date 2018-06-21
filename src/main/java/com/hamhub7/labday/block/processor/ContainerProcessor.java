@@ -1,12 +1,11 @@
 package com.hamhub7.labday.block.processor;
 
-import com.hamhub7.labday.slots.SlotOne;
 import com.hamhub7.labday.slots.SlotOutput;
+import com.hamhub7.labday.slots.SlotUpgrade;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -55,7 +54,7 @@ public class ContainerProcessor extends Container
 				processor.markDirty();
 			}
 		});
-		addSlotToContainer(new SlotOne(inventory, 4, 7, 48) 
+		addSlotToContainer(new SlotUpgrade(inventory, 4, 151, 17) 
 		{
 			@Override
 			public void onSlotChanged() 
@@ -63,7 +62,7 @@ public class ContainerProcessor extends Container
 				processor.markDirty();
 			}
 		});
-		addSlotToContainer(new SlotOne(inventory, 5, 25, 48) 
+		addSlotToContainer(new SlotUpgrade(inventory, 5, 151, 35) 
 		{
 			@Override
 			public void onSlotChanged() 

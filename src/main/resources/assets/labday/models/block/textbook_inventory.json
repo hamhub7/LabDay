@@ -1,0 +1,26 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "labday:blocks/textbook/backcover_lowres",
+        "1": "labday:blocks/textbook/pages_lowres",
+        "2": "labday:blocks/textbook/cover_lowres",
+        "3": "labday:blocks/textbook/spine_lowres",
+        "4": "labday:blocks/textbook/bottom_lowres",
+        "5": "labday:blocks/textbook/top_lowres"
+    },
+    "elements": [
+        {
+            "name": "Book",
+            "from": [ 2.0, 0.0, 6.0 ], 
+            "to": [ 14.0, 16.0, 8.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 12.0, 16.0 ] },
+                "east": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "rotation": 90 },
+                "south": { "texture": "#2", "uv": [ 0.0, 0.0, 12.0, 16.0 ] },
+                "west": { "texture": "#3", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "rotation": 90 },
+                "up": { "texture": "#4", "uv": [ 0.0, 0.0, 12.0, 2.0 ] },
+                "down": { "texture": "#5", "uv": [ 0.0, 0.0, 12.0, 2.0 ], "rotation": 180 }
+            }
+        }
+    ]
+}

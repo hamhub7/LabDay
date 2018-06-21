@@ -1,0 +1,17 @@
+{
+    "forge_marker": 1,
+    "defaults": 
+    {
+        "model": "labday:bunsen_burner",
+        "textures": 
+        {
+            "particle": "labday:blocks/bunsen_burner"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants":
+    {
+        "normal": [{}],
+        "inventory": [{}]
+    }
+}

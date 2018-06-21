@@ -9,18 +9,25 @@ import com.hamhub7.labday.util.ElementUtil;
 import com.hamhub7.labday.util.ItemNBTHelper;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import scala.Float;
 
 public class ItemElement extends ItemBase
-{	
+{
+	float temp;
+	
 	public ItemElement() 
 	{
 		super("element");
@@ -46,7 +53,7 @@ public class ItemElement extends ItemBase
 		int meta = stack.getMetadata();
 		if(meta < ElementUtil.PeriodicTable.values().length)
 		{
-			return super.getUnlocalizedName(stack) + "." + ElementUtil.PeriodicTable.values()[meta].name();
+			return super.getUnlocalizedName(stack) + "." + ElementUtil.PeriodicTable.values()[meta].toString();
 		}
 		else
 		{
@@ -79,9 +86,9 @@ public class ItemElement extends ItemBase
 			tooltip.add(TextFormatting.GRAY.toString() + "Melting Point: " + ElementUtil.getMeltingPoint(stack.getMetadata()) + " K");
 			tooltip.add(TextFormatting.GRAY.toString() + "Boiling Point: " + ElementUtil.getBoilingPoint(stack.getMetadata()) + " K");
 			tooltip.add(TextFormatting.GRAY.toString() + "Phase: " + ElementUtil.getPhase(stack.getMetadata(), getTemp(stack)));
-			tooltip.add(TextFormatting.GRAY.toString() + "Specific Heat: " + Double.toString(ElementUtil.getSpecHeat(stack.getMetadata())));
-			tooltip.add(TextFormatting.GRAY.toString() + "Density: " + Double.toString(ElementUtil.getDensity(stack.getMetadata())));
-			tooltip.add(TextFormatting.GRAY.toString() + "Electronegativity: " + Double.toString(ElementUtil.getElecNeg(stack.getMetadata())));
+			if(ElementUtil.getSpecHeat(stack.getMetadata()) != -1) { tooltip.add(TextFormatting.GRAY.toString() + "Specific Heat: " + Double.toString(ElementUtil.getSpecHeat(stack.getMetadata())) + " J/g*K"); }
+			tooltip.add(TextFormatting.GRAY.toString() + "Density: " + Double.toString(ElementUtil.getDensity(stack.getMetadata())) + " g/cm^3");
+			if(ElementUtil.getElecNeg(stack.getMetadata()) != -1) { tooltip.add(TextFormatting.GRAY.toString() + "Electronegativity: " + Double.toString(ElementUtil.getElecNeg(stack.getMetadata()))); }
 		}
 		else
 		{

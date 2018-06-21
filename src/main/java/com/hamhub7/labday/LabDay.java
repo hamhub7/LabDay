@@ -10,6 +10,7 @@ import com.hamhub7.labday.recipes.ModRecipes;
 import com.hamhub7.labday.recipes.ProcessorRecipes;
 import com.hamhub7.labday.tabs.CreativeTab;
 import com.hamhub7.labday.tabs.ElementTab;
+import com.hamhub7.labday.util.CompoundUtil;
 import com.hamhub7.labday.util.ElementUtil;
 import com.hamhub7.labday.util.GuiHandler;
 import com.hamhub7.labday.util.SoundsHandler;
@@ -18,6 +19,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -49,6 +51,8 @@ public class LabDay
     	System.out.println(name + " is loading my dudes!");
         logger = event.getModLog();
     	proxy.registerRenderers();
+    	ElementUtil.init();
+    	CompoundUtil.init();
     	GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
     	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
@@ -57,8 +61,7 @@ public class LabDay
     public void init(FMLInitializationEvent event)
     {
     	ModRecipes.init();
-    	ProcessorRecipes.getInstance().init();;
-    	ElementUtil.getInstance().addTemps();
+    	ProcessorRecipes.getInstance().init();
     	SoundsHandler.registerSounds();
     }
     

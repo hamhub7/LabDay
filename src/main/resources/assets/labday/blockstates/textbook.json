@@ -1,0 +1,21 @@
+{
+    "forge_marker": 1,
+    "defaults": 
+    {
+        "model": "labday:textbook",
+        "textures": 
+        {
+            "particle": "labday:blocks/textbook/cover"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants":
+    {
+        "normal": [{}],
+        "inventory": [{ "model": "labday:textbook_inventory", "y": 0 }],
+        "facing=north": { "model": "labday:textbook", "y": 180 },
+        "facing=east": { "model": "labday:textbook", "y": 270 },
+        "facing=south": { "model": "labday:textbook"},
+        "facing=west": { "model": "labday:textbook", "y": 90 }
+    }
+}

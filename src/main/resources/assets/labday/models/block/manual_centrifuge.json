@@ -1,0 +1,25 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "labday:blocks/centrifuge/manual_centrifuge_front",
+        "1": "labday:blocks/centrifuge/manual_centrifuge_right",
+        "2": "labday:blocks/centrifuge/manual_centrifuge_back",
+        "3": "labday:blocks/centrifuge/manual_centrifuge_top",
+        "4": "blocks/centrifuge_bottom"
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 0.0, 0.0, 0.0 ], 
+            "to": [ 16.0, 16.0, 16.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#3", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#4", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ]
+}

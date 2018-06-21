@@ -1,0 +1,36 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "labday:blocks/lab_table/side",
+        "1": "labday:blocks/lab_table/side_cabinets",
+        "2": "labday:blocks/lab_table/lab_counter"
+    },
+    "elements": [
+        {
+            "name": "Table",
+            "from": [ 2.0, 0.0, 0.0 ], 
+            "to": [ 14.0, 14.0, 16.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 12.0, 14.0 ] },
+                "east": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 14.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 12.0, 14.0 ] },
+                "west": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 14.0 ] },
+                "up": { "texture": "#2", "uv": [ 0.0, 0.0, 12.0, 16.0 ] },
+                "down": { "texture": "#2", "uv": [ 0.0, 0.0, 12.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "Counter",
+            "from": [ 0.0, 14.0, 0.0 ], 
+            "to": [ 16.0, 16.0, 16.0 ], 
+            "faces": {
+                "north": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
+                "east": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
+                "south": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
+                "west": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
+                "up": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ]
+}

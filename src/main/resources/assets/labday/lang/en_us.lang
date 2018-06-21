@@ -27,9 +27,13 @@ tile.ore_uraninite.name=Uraninite Ore
 tile.ore_wolframite.name=Wolframite Ore
 
 #Blocks
-tile.processor.name=Processor
+tile.processor.name=Ore Processor
 tile.creativepower.name=Creative Power Source
 tile.creativevoid.name=Creative Void
+tile.icebox.name=Icebox
+tile.bunsen_burner.name=Bunsen Burner
+tile.lab_table.name=Lab Table
+tile.textbook.name=Lab Day: The Ultimate Guide
 
 #Tab
 itemGroup.labday=Lab Day
@@ -40,6 +44,9 @@ tooltip.labday.battery.normal=Contains %dT/%dT
 
 #Items
 item.speed_upgrade.name=Speed Upgrade
+item.base_upgrade.name=Base Upgrade
+item.efficiency_upgrade.name=Efficiency Upgrade
+item.wrench.name=Wrench
 
 #Elements
 item.element.generic.name=Element

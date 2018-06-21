@@ -27,7 +27,7 @@ public class TileEntityProcessor extends TileEntity implements ITickable
 	public static int COOK_TIMER = 200;
 	public static int POWER_USAGE = 40;
 	public static final int MAX_CAPACITY = 1000000;
-	public static final int RATE = 1000;
+	public static final int RATE = 10000;
 	public static int cookTime;
 	private int lastCookTime;
 	public boolean burnFlag = false;
@@ -266,7 +266,7 @@ public class TileEntityProcessor extends TileEntity implements ITickable
 	public static int getEnergyScaled(int pixels)
 	{
 		int j = (int)container.getStoredPower();
-		return j != 0 ? (MAX_CAPACITY - j) * pixels / MAX_CAPACITY : 0;
+		return j != 0 ? (j) * pixels / MAX_CAPACITY : 0;
 	}
 	
 	public static int recipeAmount()
