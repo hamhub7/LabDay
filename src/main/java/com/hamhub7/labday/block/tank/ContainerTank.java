@@ -1,4 +1,4 @@
-package com.hamhub7.labday.block.labtable;
+package com.hamhub7.labday.block.tank;
 
 import com.hamhub7.labday.slots.SlotOutput;
 
@@ -13,26 +13,31 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerLabTable extends Container
+public class ContainerTank extends Container
 {
-	public TileEntityLabTable labTable;
+	public TileEntityTank tank;
 	
-	public ContainerLabTable(InventoryPlayer playerInv, final TileEntity labTable) 
+	public ContainerTank(InventoryPlayer playerInv, final TileEntity tank) 
 	{
-		IItemHandler inventory = labTable.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
-		this.labTable = (TileEntityLabTable)labTable;
-
-		for(int h = 0; h < 9; h++)
+		IItemHandler input = tank.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
+		IItemHandler output = tank.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+		this.tank = (TileEntityTank)tank;
+		addSlotToContainer(new SlotItemHandler(input, 0, 44, 26) 
 		{
-			addSlotToContainer(new SlotItemHandler(inventory, h, 8 + h * 18, 26) 
+			@Override
+			public void onSlotChanged() 
 			{
-				@Override
-				public void onSlotChanged() 
-				{
-					labTable.markDirty();
-				}
-			});
-		}
+				tank.markDirty();
+			}
+		});
+		addSlotToContainer(new SlotOutput(output, 0, 44, 58) 
+		{
+			@Override
+			public void onSlotChanged() 
+			{
+				tank.markDirty();
+			}
+		});
 		
 		for (int i = 0; i < 3; i++) 
 		{
@@ -59,41 +64,34 @@ public class ContainerLabTable extends Container
 	{
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = inventorySlots.get(index);
-	
-		if (slot != null && slot.getHasStack()) 
-		{
+
+		if (slot != null && slot.getHasStack()) {
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
-	
+
 			int containerSlots = inventorySlots.size() - player.inventory.mainInventory.size();
-	
-			if (index < containerSlots) 
-			{
-				if (!this.mergeItemStack(itemstack1, containerSlots, inventorySlots.size(), true)) 
-				{
+
+			if (index < containerSlots) {
+				if (!this.mergeItemStack(itemstack1, containerSlots, inventorySlots.size(), true)) {
 					return ItemStack.EMPTY;
 				}
-			} 
-			else if (!this.mergeItemStack(itemstack1, 0, containerSlots, false)) 
-			{
+			} else if (!this.mergeItemStack(itemstack1, 0, containerSlots, false)) {
 				return ItemStack.EMPTY;
 			}
-	
-			if (itemstack1.getCount() == 0) 
-			{
+
+			if (itemstack1.getCount() == 0) {
 				slot.putStack(ItemStack.EMPTY);
-			} else 
-			{
+			} else {
 				slot.onSlotChanged();
 			}
-	
-			if (itemstack1.getCount() == itemstack.getCount()) 
-			{
+
+			if (itemstack1.getCount() == itemstack.getCount()) {
 				return ItemStack.EMPTY;
 			}
-	
+
 			slot.onTake(player, itemstack1);
 		}
+
 		return itemstack;
 	}
 }

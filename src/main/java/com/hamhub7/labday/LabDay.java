@@ -7,10 +7,8 @@ import com.hamhub7.labday.gen.ModWorldGen;
 import com.hamhub7.labday.item.ModItems;
 import com.hamhub7.labday.proxy.CommonProxy;
 import com.hamhub7.labday.recipes.ModRecipes;
-import com.hamhub7.labday.recipes.ProcessorRecipes;
 import com.hamhub7.labday.tabs.CreativeTab;
 import com.hamhub7.labday.tabs.ElementTab;
-import com.hamhub7.labday.util.CompoundUtil;
 import com.hamhub7.labday.util.ElementUtil;
 import com.hamhub7.labday.util.GuiHandler;
 import com.hamhub7.labday.util.SoundsHandler;
@@ -35,7 +33,7 @@ public class LabDay
     public static final String modid = "labday";
     public static final String name = "Lab Day";
     public static final String version = "1.0";
-
+    
     @Mod.Instance(modid)
     public static LabDay instance;
     private static Logger logger;
@@ -48,11 +46,9 @@ public class LabDay
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-    	System.out.println(name + " is loading my dudes!");
         logger = event.getModLog();
     	proxy.registerRenderers();
     	ElementUtil.init();
-    	CompoundUtil.init();
     	GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
     	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
@@ -61,7 +57,6 @@ public class LabDay
     public void init(FMLInitializationEvent event)
     {
     	ModRecipes.init();
-    	ProcessorRecipes.getInstance().init();
     	SoundsHandler.registerSounds();
     }
     

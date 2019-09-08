@@ -2,7 +2,6 @@ package com.hamhub7.labday.block.creativevoid;
 
 import com.hamhub7.labday.LabDay;
 import com.hamhub7.labday.block.BlockTileEntity;
-import com.hamhub7.labday.block.processor.TileEntityProcessor;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

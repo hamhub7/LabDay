@@ -5,7 +5,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockOre extends BlockBase
 {
-private String oreName;
+	private String oreName;
 	
 	public BlockOre(Material material, String name, String oreName)
 	{

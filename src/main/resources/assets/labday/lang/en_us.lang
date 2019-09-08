@@ -3,7 +3,7 @@ tile.ore_acanthite.name=Acanthite Ore
 tile.ore_barite.name=Barite Ore
 tile.ore_bauxite.name=Bauxite Ore
 tile.ore_beryl.name=Beryl Ore
-tile.ore_bornite.name=Borite Ore
+tile.ore_bornite.name=Bornite Ore
 tile.ore_cassiterite.name=Cassiterite Ore
 tile.ore_chalcocite.name=Chalcocite Ore
 tile.ore_chalcopyrite.name=Chalcopyrite Ore
@@ -27,11 +27,8 @@ tile.ore_uraninite.name=Uraninite Ore
 tile.ore_wolframite.name=Wolframite Ore
 
 #Blocks
-tile.processor.name=Ore Processor
 tile.creativepower.name=Creative Power Source
 tile.creativevoid.name=Creative Void
-tile.icebox.name=Icebox
-tile.bunsen_burner.name=Bunsen Burner
 tile.lab_table.name=Lab Table
 tile.textbook.name=Lab Day: The Ultimate Guide
 

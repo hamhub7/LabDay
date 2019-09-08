@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
-import com.hamhub7.labday.recipes.ProcessorRecipes;
 
 import net.minecraft.util.NonNullList;
 

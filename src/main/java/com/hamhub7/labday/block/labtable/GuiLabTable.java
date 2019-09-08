@@ -2,8 +2,6 @@ package com.hamhub7.labday.block.labtable;
 
 import com.hamhub7.labday.LabDay;
 import com.hamhub7.labday.block.ModBlocks;
-import com.hamhub7.labday.block.processor.ContainerProcessor;
-import com.hamhub7.labday.block.processor.TileEntityProcessor;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;

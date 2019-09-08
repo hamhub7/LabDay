@@ -1,13 +1,9 @@
 package com.hamhub7.labday.block;
 
-import com.hamhub7.labday.block.centrifuge.BlockCentrifuge;
 import com.hamhub7.labday.block.creativepower.BlockCreativePower;
 import com.hamhub7.labday.block.creativevoid.BlockCreativeVoid;
 import com.hamhub7.labday.block.labtable.BlockLabTable;
 import com.hamhub7.labday.block.notebook.BlockTextbook;
-import com.hamhub7.labday.block.processor.BlockProcessor;
-import com.hamhub7.labday.block.temperature.bunsen.BlockBunsenBurner;
-import com.hamhub7.labday.block.temperature.icebox.BlockIcebox;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -46,27 +42,19 @@ public class ModBlocks
 	public static BlockOres oreWolframite = new BlockOres("ore_wolframite", "oreWolframite");
 	
 	//Machines
-	public static BlockProcessor processor = new BlockProcessor();
 	public static BlockCreativePower creativePower = new BlockCreativePower();
 	public static BlockCreativeVoid creativeVoid = new BlockCreativeVoid();
-	public static BlockBunsenBurner bunsenBurner = new BlockBunsenBurner();
-	public static BlockIcebox icebox = new BlockIcebox();
 	public static BlockLabTable labTable = new BlockLabTable();
 	public static BlockTextbook notebook = new BlockTextbook();
-	public static BlockCentrifuge centrifuge = new BlockCentrifuge();
 	
 	//Extra
 	
 	public static void register(IForgeRegistry<Block> registry)
 	{
-		GameRegistry.registerTileEntity(processor.getTileEntityClass(), processor.getRegistryName().toString());
 		GameRegistry.registerTileEntity(creativePower.getTileEntityClass(), creativePower.getRegistryName().toString());
 		GameRegistry.registerTileEntity(creativeVoid.getTileEntityClass(), creativeVoid.getRegistryName().toString());
-		GameRegistry.registerTileEntity(icebox.getTileEntityClass(), icebox.getRegistryName().toString());
-		GameRegistry.registerTileEntity(bunsenBurner.getTileEntityClass(), bunsenBurner.getRegistryName().toString());
 		GameRegistry.registerTileEntity(labTable.getTileEntityClass(), labTable.getRegistryName().toString());
 		GameRegistry.registerTileEntity(notebook.getTileEntityClass(), notebook.getRegistryName().toString());
-		GameRegistry.registerTileEntity(centrifuge.getTileEntityClass(), centrifuge.getRegistryName().toString());
 		registry.registerAll
 		(
 			oreAcanthite,
@@ -95,14 +83,10 @@ public class ModBlocks
 			oreSphalerite,
 			oreUraninite,
 			oreWolframite,
-			processor,
 			creativePower,
 			creativeVoid,
-			bunsenBurner,
-			icebox,
 			labTable,
-			notebook,
-			centrifuge
+			notebook
 		);
 	}
 	
@@ -136,14 +120,10 @@ public class ModBlocks
 			oreSphalerite.createItemBlock(),
 			oreUraninite.createItemBlock(),
 			oreWolframite.createItemBlock(),
-			processor.createItemBlock(),
 			creativePower.createItemBlock(),
 			creativeVoid.createItemBlock(),
-			bunsenBurner.createItemBlock(),
-			icebox.createItemBlock(),
 			labTable.createItemBlock(),
-			notebook.createItemBlock(),
-			centrifuge.createItemBlock()
+			notebook.createItemBlock()
 		);
 	}
 	
@@ -175,13 +155,9 @@ public class ModBlocks
 		oreSphalerite.registerItemModel(Item.getItemFromBlock(oreSphalerite));
 		oreUraninite.registerItemModel(Item.getItemFromBlock(oreUraninite));
 		oreWolframite.registerItemModel(Item.getItemFromBlock(oreWolframite));
-		processor.registerItemModel(Item.getItemFromBlock(processor));
 		creativePower.registerItemModel(Item.getItemFromBlock(creativePower));
 		creativeVoid.registerItemModel(Item.getItemFromBlock(creativeVoid));
-		bunsenBurner.registerItemModel(Item.getItemFromBlock(bunsenBurner));
-		icebox.registerItemModel(Item.getItemFromBlock(icebox));
 		labTable.registerItemModel(Item.getItemFromBlock(labTable));
 		notebook.registerItemModel(Item.getItemFromBlock(notebook));
-		centrifuge.registerItemModel(Item.getItemFromBlock(centrifuge));
 	}
 }

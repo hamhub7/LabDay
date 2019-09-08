@@ -12,7 +12,6 @@ public class ModItems
 	public static ItemUpgrade efficiencyUpgrade = new ItemUpgrade(UpgradeType.efficiency);
 	public static ItemUpgrade baseUpgrade = new ItemUpgrade(UpgradeType.base);
 	public static ItemElement element = new ItemElement();
-	public static ItemCompound compound = new ItemCompound();
 	public static UnstackableItemBase wrench = new UnstackableItemBase("wrench");
 	
 	public static void register(IForgeRegistry<Item> registry)
@@ -23,7 +22,6 @@ public class ModItems
 			efficiencyUpgrade,
 			baseUpgrade,
 			element,
-			compound,
 			wrench
 		);
 	}
@@ -34,7 +32,6 @@ public class ModItems
 		efficiencyUpgrade.registerItemModel();
 		baseUpgrade.registerItemModel();
 		element.registerItemModel();
-		compound.registerItemModel();
 		wrench.registerItemModel();
 	}
 }
