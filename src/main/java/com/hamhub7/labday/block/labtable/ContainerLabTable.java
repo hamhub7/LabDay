@@ -22,17 +22,14 @@ public class ContainerLabTable extends Container
 		IItemHandler inventory = labTable.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
 		this.labTable = (TileEntityLabTable)labTable;
 
-		for(int h = 0; h < 9; h++)
+		addSlotToContainer(new SlotItemHandler(inventory, 1, 8 + 1 * 18, 26) 
 		{
-			addSlotToContainer(new SlotItemHandler(inventory, h, 8 + h * 18, 26) 
+			@Override
+			public void onSlotChanged() 
 			{
-				@Override
-				public void onSlotChanged() 
-				{
-					labTable.markDirty();
-				}
-			});
-		}
+				labTable.markDirty();
+			}
+		});
 		
 		for (int i = 0; i < 3; i++) 
 		{

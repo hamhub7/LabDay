@@ -20,7 +20,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityLabTable extends TileEntity
 {
-	private ItemStackHandler inventory = new ItemStackHandler(9);
+	private ItemStackHandler inventory = new ItemStackHandler(1);
 	private BlockPos masterPos;
 	
 	public void deleteMaster()
