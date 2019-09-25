@@ -1,7 +1,6 @@
 package com.hamhub7.labday.item;
 
 import com.hamhub7.labday.item.ItemUpgrade.UpgradeType;
-import com.hamhub7.labday.util.ElementUtil;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;

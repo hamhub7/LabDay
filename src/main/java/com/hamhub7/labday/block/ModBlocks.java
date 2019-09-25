@@ -1,7 +1,5 @@
 package com.hamhub7.labday.block;
 
-import com.hamhub7.labday.block.creativepower.BlockCreativePower;
-import com.hamhub7.labday.block.creativevoid.BlockCreativeVoid;
 import com.hamhub7.labday.block.labtable.BlockLabTable;
 import com.hamhub7.labday.block.notebook.BlockTextbook;
 
@@ -42,8 +40,6 @@ public class ModBlocks
 	public static BlockOres oreWolframite = new BlockOres("ore_wolframite", "oreWolframite");
 	
 	//Machines
-	public static BlockCreativePower creativePower = new BlockCreativePower();
-	public static BlockCreativeVoid creativeVoid = new BlockCreativeVoid();
 	public static BlockLabTable labTable = new BlockLabTable();
 	public static BlockTextbook notebook = new BlockTextbook();
 	
@@ -51,8 +47,6 @@ public class ModBlocks
 	
 	public static void register(IForgeRegistry<Block> registry)
 	{
-		GameRegistry.registerTileEntity(creativePower.getTileEntityClass(), creativePower.getRegistryName().toString());
-		GameRegistry.registerTileEntity(creativeVoid.getTileEntityClass(), creativeVoid.getRegistryName().toString());
 		GameRegistry.registerTileEntity(labTable.getTileEntityClass(), labTable.getRegistryName().toString());
 		GameRegistry.registerTileEntity(notebook.getTileEntityClass(), notebook.getRegistryName().toString());
 		registry.registerAll
@@ -83,8 +77,6 @@ public class ModBlocks
 			oreSphalerite,
 			oreUraninite,
 			oreWolframite,
-			creativePower,
-			creativeVoid,
 			labTable,
 			notebook
 		);
@@ -120,8 +112,6 @@ public class ModBlocks
 			oreSphalerite.createItemBlock(),
 			oreUraninite.createItemBlock(),
 			oreWolframite.createItemBlock(),
-			creativePower.createItemBlock(),
-			creativeVoid.createItemBlock(),
 			labTable.createItemBlock(),
 			notebook.createItemBlock()
 		);
@@ -155,8 +145,6 @@ public class ModBlocks
 		oreSphalerite.registerItemModel(Item.getItemFromBlock(oreSphalerite));
 		oreUraninite.registerItemModel(Item.getItemFromBlock(oreUraninite));
 		oreWolframite.registerItemModel(Item.getItemFromBlock(oreWolframite));
-		creativePower.registerItemModel(Item.getItemFromBlock(creativePower));
-		creativeVoid.registerItemModel(Item.getItemFromBlock(creativeVoid));
 		labTable.registerItemModel(Item.getItemFromBlock(labTable));
 		notebook.registerItemModel(Item.getItemFromBlock(notebook));
 	}

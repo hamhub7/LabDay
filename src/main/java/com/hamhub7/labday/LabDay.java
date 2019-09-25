@@ -9,7 +9,6 @@ import com.hamhub7.labday.proxy.CommonProxy;
 import com.hamhub7.labday.recipes.ModRecipes;
 import com.hamhub7.labday.tabs.CreativeTab;
 import com.hamhub7.labday.tabs.ElementTab;
-import com.hamhub7.labday.util.ElementUtil;
 import com.hamhub7.labday.util.GuiHandler;
 import com.hamhub7.labday.util.SoundsHandler;
 
@@ -48,7 +47,6 @@ public class LabDay
     {
         logger = event.getModLog();
     	proxy.registerRenderers();
-    	ElementUtil.init();
     	GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
     	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
