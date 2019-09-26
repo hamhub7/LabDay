@@ -1,6 +1,6 @@
 package com.hamhub7.labday.block.notebook;
 
-import com.hamhub7.labday.block.BlockTileEntity;
+import com.hamhub7.labday.block.BlockBase;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
@@ -9,63 +9,24 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockTextbook extends BlockTileEntity<TileEntityTextbook>
+public class BlockTextbook extends BlockBase
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
 	public BlockTextbook() 
 	{
 		super(Material.CIRCUITS, "textbook");
-	}
-	
-	@Override
-	public Class<TileEntityTextbook> getTileEntityClass() 
-	{
-		return TileEntityTextbook.class;
-	}
-	
-	@Override
-	public TileEntityTextbook createTileEntity(World world, IBlockState state) 
-	{
-		return new TileEntityTextbook();
-	}
-	
-	@Override
-	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
-	{
-		if(!world.isRemote)
-		{
-			player.sendMessage(new TextComponentString("Slaves:"));
-			TileEntityTextbook tile = (TileEntityTextbook)world.getTileEntity(pos);
-			for(BlockPos table : tile.tables) 
-			{
-				player.sendMessage(new TextComponentString("Pos: " + table.getX() + ", " + table.getZ()));
-			}
-		}
-		return true;
-	}
-	
-	@Override
-	public void breakBlock(World world, BlockPos pos, IBlockState state) 
-	{
-		TileEntityTextbook tile = (TileEntityTextbook)world.getTileEntity(pos);
-		tile.destroyMulitblock();
 	}
 	
 	@Override

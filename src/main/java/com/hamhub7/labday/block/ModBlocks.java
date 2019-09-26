@@ -1,10 +1,10 @@
 package com.hamhub7.labday.block;
 
+import com.hamhub7.labday.block.furnace.BlockPoweredFurnace;
 import com.hamhub7.labday.block.labtable.BlockLabTable;
 import com.hamhub7.labday.block.notebook.BlockTextbook;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -39,16 +39,16 @@ public class ModBlocks
 	public static BlockOres oreUraninite = new BlockOres("ore_uraninite", "oreUraninite");
 	public static BlockOres oreWolframite = new BlockOres("ore_wolframite", "oreWolframite");
 	
-	//Machines
+	//Machines & Utilities
 	public static BlockLabTable labTable = new BlockLabTable();
 	public static BlockTextbook notebook = new BlockTextbook();
+	public static BlockPoweredFurnace poweredFurnace = new BlockPoweredFurnace();
 	
 	//Extra
 	
 	public static void register(IForgeRegistry<Block> registry)
 	{
 		GameRegistry.registerTileEntity(labTable.getTileEntityClass(), labTable.getRegistryName().toString());
-		GameRegistry.registerTileEntity(notebook.getTileEntityClass(), notebook.getRegistryName().toString());
 		registry.registerAll
 		(
 			oreAcanthite,
@@ -78,7 +78,8 @@ public class ModBlocks
 			oreUraninite,
 			oreWolframite,
 			labTable,
-			notebook
+			notebook,
+			poweredFurnace
 		);
 	}
 	
@@ -113,7 +114,8 @@ public class ModBlocks
 			oreUraninite.createItemBlock(),
 			oreWolframite.createItemBlock(),
 			labTable.createItemBlock(),
-			notebook.createItemBlock()
+			notebook.createItemBlock(),
+			poweredFurnace.createItemBlock()
 		);
 	}
 	
@@ -147,5 +149,6 @@ public class ModBlocks
 		oreWolframite.registerItemModel(Item.getItemFromBlock(oreWolframite));
 		labTable.registerItemModel(Item.getItemFromBlock(labTable));
 		notebook.registerItemModel(Item.getItemFromBlock(notebook));
+		poweredFurnace.registerItemModel(Item.getItemFromBlock(poweredFurnace));
 	}
 }

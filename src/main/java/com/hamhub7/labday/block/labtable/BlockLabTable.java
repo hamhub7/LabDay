@@ -8,7 +8,6 @@ import com.hamhub7.labday.LabDay;
 import com.hamhub7.labday.block.BlockTileEntity;
 import com.hamhub7.labday.block.ModBlocks;
 import com.hamhub7.labday.block.notebook.BlockTextbook;
-import com.hamhub7.labday.block.notebook.TileEntityTextbook;
 import com.hamhub7.labday.item.ModItems;
 import com.hamhub7.labday.util.GuiHandler;
 
@@ -64,17 +63,6 @@ public class BlockLabTable extends BlockTileEntity<TileEntityLabTable>
 			player.openGui(LabDay.instance, GuiHandler.GuiList.LABTABLE.ordinal(), world, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;
-	}
-	
-	@Override
-	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) 
-	{
-		TileEntityLabTable tile = (TileEntityLabTable)world.getTileEntity(pos);
-		if(tile.hasMaster())
-		{
-			TileEntityTextbook masterTile = (TileEntityTextbook)world.getTileEntity(tile.getMaster());
-			masterTile.recalculateMultiblock();
-		}
 	}
 	
 	@Override

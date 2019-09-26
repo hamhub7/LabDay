@@ -1,12 +1,15 @@
 package com.hamhub7.labday.proxy;
 
 import com.hamhub7.labday.LabDay;
+import com.hamhub7.labday.block.labtable.TESRLabTable;
+import com.hamhub7.labday.block.labtable.TileEntityLabTable;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -24,7 +27,7 @@ public class ClientProxy extends CommonProxy
 	
 	public void registerRenderers() 
 	{
-		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLabTable.class, new TESRLabTable());
 	}
 	
 	@Override

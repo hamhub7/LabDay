@@ -29,21 +29,24 @@ public class GuiLabTable extends GuiContainer
 		GlStateManager.color(1, 1, 1, 1);
 		mc.getTextureManager().bindTexture(BG_TEXTURE);
 		int x = (width - xSize) / 2;
-		int y = (height - ySize) / 2;
-		drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
+		//Texture is 193 pixels tall, and we want the margin to only change on the top
+		int y = ((height - ySize) / 2) - (193 - ySize);
+		drawTexturedModalRect(x, y, 0, 0, xSize, 193);
 	}
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
 	{
 		String name = I18n.format(ModBlocks.labTable.getUnlocalizedName() + ".name");
-		fontRenderer.drawString(name, 6, 6, 0x000000);
-		if(tileentity.hasMaster())
-		{
-			String masterPos = "Master Pos: " + Integer.toString(tileentity.getMaster().getX()) + ", " + Integer.toString(tileentity.getMaster().getZ());
-			fontRenderer.drawString(masterPos, 6, 16, 0x000000);
-		}
+		fontRenderer.drawString(name, 8, 0, 0x000000);
 		fontRenderer.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 92, 0x404040);
+	}
+	
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) 
+	{
+		super.drawScreen(mouseX, mouseY, partialTicks);
 		renderHoveredToolTip(mouseX, mouseY);
 	}
+	
 }

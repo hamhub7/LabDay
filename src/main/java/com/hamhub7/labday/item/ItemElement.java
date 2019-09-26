@@ -220,21 +220,21 @@ public class ItemElement extends ItemBase
 		MENDELEVIUM("Md", 1100, Double.MAX_VALUE, 258.1),
 		NOBELLIUM("No", 1100, Double.MAX_VALUE, 259.1),
 		LAWRENCIUM("Lr", 1900, Double.MAX_VALUE, 262),
-		RUTHERFORDIUM("Rf", Double.MIN_VALUE, Double.MAX_VALUE, 267),
-		DUBNIUM("Db", Double.MIN_VALUE, Double.MAX_VALUE, 268),
-		SEABORGIUM("Sg", Double.MIN_VALUE, Double.MAX_VALUE, 269),
-		BOHRIUM("Bh", Double.MIN_VALUE, Double.MAX_VALUE, 270),
-		HASSIUM("Hs", Double.MIN_VALUE, Double.MAX_VALUE, 269),
-		MEITNERIUM("Mt", Double.MIN_VALUE, Double.MAX_VALUE, 278),
-		DARMSTADTIUM("Ds", Double.MIN_VALUE, Double.MAX_VALUE, 281),
-		ROENTGENIUM("Rg", Double.MIN_VALUE, Double.MAX_VALUE, 280),
-		COPERNICIUM("Cn", Double.MIN_VALUE, Double.MAX_VALUE, 285),
-		NIHONIUM("Nh", Double.MIN_VALUE, Double.MAX_VALUE, 286),
-		FLEROVIUM("Fl", Double.MIN_VALUE, Double.MAX_VALUE, 289),
-		MOSCOVIUM("Mc", Double.MIN_VALUE, Double.MAX_VALUE, 289),
-		LIVERMORIUM("Lv", Double.MIN_VALUE, Double.MAX_VALUE, 293),
-		TENNESSINE("Ts", Double.MIN_VALUE, Double.MAX_VALUE, 294),
-		OGANESSON("Og", Double.MIN_VALUE, Double.MAX_VALUE, 294);
+		RUTHERFORDIUM("Rf", Double.MAX_VALUE, Double.MAX_VALUE, 267),
+		DUBNIUM("Db", Double.MAX_VALUE, Double.MAX_VALUE, 268),
+		SEABORGIUM("Sg", Double.MAX_VALUE, Double.MAX_VALUE, 269),
+		BOHRIUM("Bh", Double.MAX_VALUE, Double.MAX_VALUE, 270),
+		HASSIUM("Hs", Double.MAX_VALUE, Double.MAX_VALUE, 269),
+		MEITNERIUM("Mt", Double.MAX_VALUE, Double.MAX_VALUE, 278),
+		DARMSTADTIUM("Ds", Double.MAX_VALUE, Double.MAX_VALUE, 281),
+		ROENTGENIUM("Rg", Double.MAX_VALUE, Double.MAX_VALUE, 280),
+		COPERNICIUM("Cn", Double.MAX_VALUE, Double.MAX_VALUE, 285),
+		NIHONIUM("Nh", Double.MAX_VALUE, Double.MAX_VALUE, 286),
+		FLEROVIUM("Fl", Double.MAX_VALUE, Double.MAX_VALUE, 289),
+		MOSCOVIUM("Mc", Double.MAX_VALUE, Double.MAX_VALUE, 289),
+		LIVERMORIUM("Lv", Double.MAX_VALUE, Double.MAX_VALUE, 293),
+		TENNESSINE("Ts", Double.MAX_VALUE, Double.MAX_VALUE, 294),
+		OGANESSON("Og", Double.MAX_VALUE, Double.MAX_VALUE, 294);
 		
 		
 		private final String symbol;
@@ -262,7 +262,7 @@ public class ItemElement extends ItemBase
 		
 		public String getMeltingString()
 		{
-			return melting == Double.MIN_VALUE ? "Unknown" : Double.toString(melting) + " K";
+			return melting == Double.MAX_VALUE ? "Unknown" : Double.toString(melting) + " K";
 		}
 		
 		public double getBoilingPoint()

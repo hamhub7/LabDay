@@ -1,46 +1,51 @@
 package com.hamhub7.labday.block.labtable;
 
-import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.google.common.collect.Lists;
-import com.hamhub7.labday.block.notebook.BlockTextbook;
+import com.hamhub7.labday.LabDay;
+import com.hamhub7.labday.block.labtable.packet.PacketRequestUpdateLabTable;
+import com.hamhub7.labday.block.labtable.packet.PacketUpdateLabTable;
 
-import net.darkhax.tesla.capability.TeslaCapabilities;
-import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.util.ITickable;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityLabTable extends TileEntity
 {
-	private ItemStackHandler inventory = new ItemStackHandler(1);
-	private BlockPos masterPos;
+	private Random rand = new Random();
 	
-	public void deleteMaster()
+	public ItemStackHandler inventory = new ItemStackHandler(9)
 	{
-		this.masterPos = null;
+		protected void onContentsChanged(int slot) 
+		{
+			if(!world.isRemote)
+			{
+				LabDay.network.sendToAllAround(new PacketUpdateLabTable(TileEntityLabTable.this), new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64));
+			}
+		};
+	};
+	
+	@Override
+	public void onLoad() 
+	{
+		if(world.isRemote)
+		{
+			LabDay.network.sendToServer(new PacketRequestUpdateLabTable(this));
+		}
 	}
 	
-	public void addMaster(BlockPos masterPos)
+	@Override
+	public AxisAlignedBB getRenderBoundingBox() 
 	{
-		this.masterPos = masterPos;
-	}
-	
-	public boolean hasMaster()
-	{
-		return this.masterPos != null;
-	}
-	
-	public BlockPos getMaster()
-	{
-		return masterPos;
+		return new AxisAlignedBB(getPos(), getPos().add(1, 2, 1));
 	}
 	
 	@Override

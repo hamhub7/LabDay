@@ -31,6 +31,7 @@ tile.creativepower.name=Creative Power Source
 tile.creativevoid.name=Creative Void
 tile.lab_table.name=Lab Table
 tile.textbook.name=Lab Day: The Ultimate Guide
+tile.powered_furnace.name=Powered Furnace
 
 #Tab
 itemGroup.labday=Lab Day

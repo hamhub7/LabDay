@@ -21,15 +21,18 @@ public class ContainerLabTable extends Container
 	{
 		IItemHandler inventory = labTable.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
 		this.labTable = (TileEntityLabTable)labTable;
-
-		addSlotToContainer(new SlotItemHandler(inventory, 0, 8 + 1 * 18, 26)
+		
+		for(int i = 0; i < inventory.getSlots(); i++)
 		{
-			@Override
-			public void onSlotChanged() 
+			addSlotToContainer(new SlotItemHandler(inventory, i, (i * 18) + 8, -21)
 			{
-				labTable.markDirty();
-			}
-		});
+				@Override
+				public void onSlotChanged() 
+				{
+					labTable.markDirty();
+				}
+			});
+		}
 		
 		for (int i = 0; i < 3; i++) 
 		{

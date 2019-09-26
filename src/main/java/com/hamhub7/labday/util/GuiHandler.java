@@ -2,7 +2,6 @@ package com.hamhub7.labday.util;
 
 import com.hamhub7.labday.block.labtable.ContainerLabTable;
 import com.hamhub7.labday.block.labtable.GuiLabTable;
-import com.hamhub7.labday.block.notebook.GuiTextbook;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -25,8 +24,6 @@ public class GuiHandler implements IGuiHandler
 		{
 		case LABTABLE:
 			return new ContainerLabTable(player.inventory, tile);
-		case TEXTBOOK:
-			return null;
 		default:
 			return null;
 		}
@@ -44,8 +41,6 @@ public class GuiHandler implements IGuiHandler
 		{
 		case LABTABLE:
 			return new GuiLabTable(player.inventory, tile);
-		case TEXTBOOK:
-			return new GuiTextbook();
 		default:
 			return null;
 		}
